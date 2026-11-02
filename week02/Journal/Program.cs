@@ -1,20 +1,20 @@
 using System;
-using System.Collections.Generic;
 
 class Program
 {
     static void Main(string[] args)
     {
         // Exceeded Requirements:
-        // Added additional prompts beyond the required five.
         // Added a total entry counter when displaying entries.
+        // Added a search feature that allows users to find
+        // journal entries from a specific date.
 
         Journal journal = new Journal();
         PromptGenerator promptGenerator = new PromptGenerator();
 
         int choice = 0;
 
-        while (choice != 5)
+        while (choice != 6)
         {
             Console.WriteLine();
             Console.WriteLine("Menu Options:");
@@ -22,7 +22,8 @@ class Program
             Console.WriteLine("2. Display");
             Console.WriteLine("3. Load");
             Console.WriteLine("4. Save");
-            Console.WriteLine("5. Quit");
+            Console.WriteLine("5. Search by Date");
+            Console.WriteLine("6. Quit");
             Console.Write("Select a choice from the menu: ");
 
             choice = int.Parse(Console.ReadLine());
@@ -69,6 +70,13 @@ class Program
                 Console.WriteLine("Journal saved successfully.");
             }
             else if (choice == 5)
+            {
+                Console.Write("Enter a date (example: 11/2/2026): ");
+                string date = Console.ReadLine();
+
+                journal.SearchByDate(date);
+            }
+            else if (choice == 6)
             {
                 Console.WriteLine("Goodbye!");
             }

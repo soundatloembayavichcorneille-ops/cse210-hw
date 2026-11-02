@@ -53,4 +53,24 @@ public class Journal
             _entries.Add(entry);
         }
     }
+
+    // Creativity Feature
+    public void SearchByDate(string date)
+    {
+        bool found = false;
+
+        foreach (Entry entry in _entries)
+        {
+            if (entry._date == date)
+            {
+                entry.Display();
+                found = true;
+            }
+        }
+
+        if (!found)
+        {
+            Console.WriteLine("No entries found for that date.");
+        }
+    }
 }
