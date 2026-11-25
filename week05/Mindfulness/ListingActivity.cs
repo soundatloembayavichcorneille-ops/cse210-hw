@@ -10,6 +10,7 @@ public class ListingActivity : Activity
     public ListingActivity()
     {
         _name = "Listing Activity";
+        
 
         _description =
             "This activity will help you reflect on the good things in your life.";

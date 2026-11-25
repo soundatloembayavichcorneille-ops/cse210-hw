@@ -12,7 +12,6 @@ Each log entry stores:
 - Activity name
 - Duration completed
 
-
 */
 
 class Program
